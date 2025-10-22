@@ -1,0 +1,268 @@
+/* ===== Product Form ===== */
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin: 0 auto;
+}
+
+.product-form input,
+.product-form textarea {
+    width: 100%;
+    background: #2a2a2a;
+    color: #e6e6e6;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 0.95rem;
+}
+
+.product-form input:focus,
+.product-form textarea:focus {
+    outline: 2px solid #fff;
+}
+
+.form-actions,
+.form-actions-grid {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.form-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 30px;
+}
+
+.form-left,
+.form-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label,
+.image-upload-label {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #e6e6e6;
+}
+
+/* ===== Image Preview Box ===== */
+.image-preview-box {
+    width: 100%;
+    height: auto; /* You can make this auto if you want dynamic height */
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border: 2px solid #333;
+    padding: 0;
+}
+
+.image-preview-box.has-image {
+    border-color: #444;
+}
+
+.preview-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    gap: 10px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.preview-placeholder .material-symbols-rounded {
+    font-size: 64px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* ✅ FIXED: prevent zoomed-in preview */
+.preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* makes sure the whole image is visible */
+    object-position: center;
+    display: none;
+    background-color: #fff;
+}
+
+.preview-image.show {
+    display: block;
+}
+
+/* ===== Remove Button ===== */
+.remove-image {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #CA1929;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 10;
+}
+
+.remove-image.show {
+    display: flex;
+}
+
+.remove-image:hover {
+    background: #d32f2f;
+}
+
+.remove-image .material-symbols-rounded {
+    font-size: 18px;
+}
+
+/* ===== File Input ===== */
+.file-input-wrapper {
+    position: relative;
+}
+
+.file-input-wrapper input[type="file"] {
+    display: none;
+}
+
+.custom-file-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #6c757d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.custom-file-button:hover {
+    background: #aaa;
+}
+
+.custom-file-button .material-symbols-rounded {
+    font-size: 20px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .form-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Add Button ===== */
+.add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #6c757d;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.80rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.add-btn:hover {
+    background: #aaa;
+}
+
+.add-btn .material-symbols-rounded {
+    font-size: 20px;
+}
+
+/* ===== Edit/Delete Buttons ===== */
+.edit-btn, .delete-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.80rem;
+}
+
+.edit-btn {
+    background: #6c757d;
+    color: #fff;
+    margin-right: 8px;
+}
+
+.edit-btn:hover {
+    background: #aaa;
+}
+
+.delete-btn {
+    background: #CA1929;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background: #d32f2f;
+}
+
+.edit-btn .material-symbols-rounded,
+.delete-btn .material-symbols-rounded {
+    font-size: 18px;
+}
+
+/* ===== Product Table ===== */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-table th,
+.product-table td {
+    padding: 12px;
+    border: 2px solid #333;
+    text-align: left;
+}
+
+.product-table tbody tr:hover {
+    background: #222;
+}
