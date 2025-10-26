@@ -14,7 +14,7 @@ include_once __DIR__ . '/../shared/config/db.php';
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="../admin/uploads/numlogo.png" alt="logo" class="logo-img">
+             <img src="<?= BASE_URL ?>/shared/images/numlogo.png" alt="logo" class="logo-img">
             <span class="logo-text">Num Clothing Apparel</span>
         </div>
         <ul class="nav-links">
